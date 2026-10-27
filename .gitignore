@@ -1,0 +1,103 @@
+# ---------------------------------------------------------------------------
+# Level data: never published. Levels belong to their creators, and the crawled
+# database is Geometry Dash server data.
+# ---------------------------------------------------------------------------
+/data/
+/replay/
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.db
+level_*.txt
+level_string*.txt
+*.levelstring
+# generated datasets / token shards / song features
+/tokens/
+/runs/
+/gen/
+*.npz
+*.npy
+*.jsonl
+
+# ---------------------------------------------------------------------------
+# Game binaries, game assets, reverse-engineering material, third-party SDKs
+# ---------------------------------------------------------------------------
+# re/: only our own level-format notes (re/keys/) are published
+/re/*
+!/re/keys/
+/geode/
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+*.lib
+*.exp
+*.i64
+*.idb
+*.id0
+*.id1
+*.id2
+*.nam
+*.til
+*.bro
+*.geode
+*.geode.bak
+*.plist
+CCLocalLevels*.dat
+CCGameManager*.dat
+
+# ---------------------------------------------------------------------------
+# Build outputs, renders, caches
+# ---------------------------------------------------------------------------
+/build/
+/gallery/
+replay-mod/build/
+gdgen/sim/core/build/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.mypy_cache/
+.ruff_cache/
+
+# virtual environments
+.venv/
+venv/
+env/
+
+# model weights
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.gguf
+*.onnx
+
+# archives
+*.zip
+*.tar.gz
+*.tgz
+*.7z
+
+# secrets
+.env
+.env.*
+kaggle.json
+access_token
+
+# logs
+*.log
+logs/
+
+# OS / editor noise
+*:Zone.Identifier
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# full extraction with memory offsets/addresses (unused by code), kept local only
+gdgen/data/*.full.json

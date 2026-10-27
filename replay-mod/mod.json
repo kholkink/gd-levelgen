@@ -1,0 +1,11 @@
+{
+    "geode": "5.11.1",
+    "gd": {
+        "win": "2.2081"
+    },
+    "id": "gdgen.replay",
+    "name": "gdgen replay",
+    "version": "v0.1.0",
+    "developer": "gdgen",
+    "description": "Replays recorded input sequences tick by tick and logs player traces for simulator validation."
+}

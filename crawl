@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Usage: ./crawl start [--delay 2.0] [--include-platformer] | stop | status | log
+set -euo pipefail
+cd "$(dirname "$(readlink -f "$0")")"
+mkdir -p data
+case "${1:-status}" in
+  start)
+    shift
+    nohup setsid python3 -u -m gdgen.crawl "$@" >> data/crawl.log 2>&1 < /dev/null &
+    sleep 5
+    python3 -m gdgen.status
+    ;;
+  stop)
+    if [[ -f data/crawl.pid ]]; then
+      kill -TERM "$(cat data/crawl.pid)" && echo "stop requested (finishes the current request, then exits)"
+    else
+      echo "not running"
+    fi
+    ;;
+  status) python3 -m gdgen.status ;;
+  log) tail -n 50 -f data/crawl.log ;;
+  *) echo "usage: $0 start [--delay 2.0] [--include-platformer] | stop | status | log"; exit 1 ;;
+esac
